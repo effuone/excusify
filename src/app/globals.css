@@ -3,9 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --cf-blue: #1976D2;
-  --cf-blue-dark: #1565C0;
-  --cf-blue-light: #E3F2FD;
+  --cf-blue: #16A34A;
+  --cf-blue-dark: #15803D;
+  --cf-blue-light: #DCFCE7;
   --cf-gray: #f5f5f5;
   --cf-gray-dark: #e0e0e0;
   --cf-text: #333333;
@@ -23,9 +23,9 @@
   :root {
     --background: #1a1a1a;
     --foreground: #ededed;
-    --cf-blue: #2196F3;
-    --cf-blue-dark: #1976D2;
-    --cf-blue-light: #0D47A1;
+    --cf-blue: #22C55E;
+    --cf-blue-dark: #16A34A;
+    --cf-blue-light: #15803D;
     --cf-gray: #2a2a2a;
     --cf-gray-dark: #404040;
     --cf-text: #ffffff;
@@ -99,4 +99,42 @@ body {
   40% { content: '.'; }
   60% { content: '..'; }
   80%, 100% { content: '...'; }
+}
+
+/* Poker theme animations */
+@keyframes card-flip {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+@keyframes money-rain {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(10px) rotate(360deg); opacity: 0; }
+}
+
+.poker-card {
+  animation: card-flip 0.6s ease-in-out;
+}
+
+.money-animation {
+  animation: money-rain 2s ease-in-out infinite;
+}
+
+/* Casino table green background */
+.casino-table {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 50%, #166534 100%);
+  position: relative;
+}
+
+.casino-table::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+  pointer-events: none;
 }

@@ -69,7 +69,7 @@ export default function Excusify() {
   ];
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800'>
+    <div className='min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-100 dark:from-gray-900 dark:via-green-900 dark:to-emerald-800'>
       {/* Header */}
       <header className='bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm'>
         <div className='max-w-4xl mx-auto px-4 py-6'>
