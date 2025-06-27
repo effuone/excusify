@@ -39,7 +39,7 @@ Input parameters:
 Output format:  
 - A single excuse as plain text, no extra commentary.  
   
-Now generate the excuse.`,
+Now generate the excuse. Answer in Russian. Always`,
         },
         {
           role: 'user',

@@ -1,7 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { Sparkles, RefreshCw, Copy, Check, AlertCircle } from 'lucide-react';
+import {
+  Sparkles,
+  RefreshCw,
+  Copy,
+  Check,
+  AlertCircle,
+  Shuffle,
+} from 'lucide-react';
 
 export default function Excusify() {
   const [reason, setReason] = useState('');
@@ -53,12 +60,12 @@ export default function Excusify() {
   };
 
   const sampleReasons = [
-    'Я спал',
-    'Я был занят работой',
-    'У меня разрядился телефон',
-    'Я ел',
-    'Я забыл ответить',
-    'Я был на встрече',
+    '🃏 Я играл в покер всю ночь',
+    '💰 Считал деньги в банке',
+    '🎰 Был в казино и забыл про телефон',
+    '♠️ Изучал карточные комбинации',
+    '🤑 Торговал на бирже',
+    '🎲 Играл в настольные игры',
   ];
 
   return (
@@ -67,15 +74,15 @@ export default function Excusify() {
       <header className='bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm'>
         <div className='max-w-4xl mx-auto px-4 py-6'>
           <div className='flex items-center gap-3'>
-            <div className='bg-blue-600 p-2 rounded-lg'>
-              <Sparkles className='w-6 h-6 text-white' />
+            <div className='bg-gradient-to-r from-green-600 to-emerald-600 p-2 rounded-lg'>
+              <span className='text-2xl'>🃏</span>
             </div>
             <div>
               <h1 className='text-2xl font-bold text-gray-900 dark:text-white'>
-                Excusify
+                💰 Excusify Casino 🎰
               </h1>
               <p className='text-gray-600 dark:text-gray-400 text-sm'>
-                Превратите простые причины в креативные оправдания
+                🎲 Превратите простые причины в королевские блефы! 🤑
               </p>
             </div>
           </div>
@@ -88,7 +95,7 @@ export default function Excusify() {
           {/* Input Section */}
           <div className='cf-card'>
             <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
-              Какая у вас простая причина?
+              🎯 Какая у вас простая причина? 🃏
             </h2>
 
             <div className='space-y-4'>
@@ -96,7 +103,7 @@ export default function Excusify() {
                 <textarea
                   value={reason}
                   onChange={(e) => setReason(e.target.value)}
-                  placeholder='например: я спал, я был занят, у меня разрядился телефон...'
+                  placeholder='🎲 например: играл в покер, считал деньги, был в казино... 💰'
                   className='cf-input w-full min-h-[120px] resize-none'
                   disabled={isLoading}
                 />
@@ -117,14 +124,12 @@ export default function Excusify() {
                 {isLoading ? (
                   <>
                     <RefreshCw className='w-4 h-4 animate-spin' />
-                    <span className='loading-dots'>
-                      Создаём ваше оправдание
-                    </span>
+                    <span className='loading-dots'>🎲 Тасуем карты блефа</span>
                   </>
                 ) : (
                   <>
-                    <Sparkles className='w-4 h-4' />
-                    Создать оправдание
+                    <Shuffle className='w-4 h-4' />
+                    🎰 Сдать карты блефа! 🃏
                   </>
                 )}
               </button>
@@ -133,7 +138,7 @@ export default function Excusify() {
             {/* Sample Reasons */}
             <div className='mt-6'>
               <h3 className='text-sm font-medium text-gray-700 dark:text-gray-300 mb-3'>
-                Быстрые примеры:
+                🎯 Быстрые ставки:
               </h3>
               <div className='flex flex-wrap gap-2'>
                 {sampleReasons.map((sample, index) => (
@@ -154,7 +159,7 @@ export default function Excusify() {
           <div className='cf-card'>
             <div className='flex items-center justify-between mb-4'>
               <h2 className='text-xl font-semibold text-gray-900 dark:text-white'>
-                Ваше креативное оправдание
+                🤴 Ваш королевский блеф 🎭
               </h2>
               {excuse && (
                 <button
@@ -185,9 +190,9 @@ export default function Excusify() {
                 <div className='flex items-center justify-center h-full text-gray-500 dark:text-gray-400'>
                   <div className='text-center'>
                     <Sparkles className='w-12 h-12 mx-auto mb-4 opacity-50' />
-                    <p>Ваше креативное оправдание появится здесь!</p>
+                    <p>🎰 Ваш королевский блеф появится здесь! 🤴</p>
                     <p className='text-sm mt-2'>
-                      Введите причину и нажмите кнопку создания для начала.
+                      🎲 Поставьте причину и сдайте карты блефа! 💸
                     </p>
                   </div>
                 </div>
@@ -199,43 +204,43 @@ export default function Excusify() {
         {/* Fun Stats/Features */}
         <div className='mt-12 cf-card'>
           <h3 className='text-lg font-semibold text-gray-900 dark:text-white mb-4'>
-            Почему Excusify?
+            🎰 Почему Excusify Casino? 💰
           </h3>
           <div className='grid md:grid-cols-3 gap-6'>
             <div className='text-center'>
-              <div className='bg-blue-100 dark:bg-blue-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3'>
-                <Sparkles className='w-6 h-6 text-blue-600 dark:text-blue-400' />
+              <div className='bg-gradient-to-r from-yellow-100 to-amber-100 dark:from-yellow-900 dark:to-amber-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3'>
+                <span className='text-xl'>🤖</span>
               </div>
               <h4 className='font-medium text-gray-900 dark:text-white mb-2'>
-                Искусственный интеллект
+                🎯 ИИ-Дилер
               </h4>
               <p className='text-sm text-gray-600 dark:text-gray-400'>
-                Использует продвинутый ИИ для превращения простых причин в
-                подробные, забавные оправдания.
+                🎲 Умный дилер раздаёт самые убедительные карты блефа!
+                Превращает простые причины в королевские комбинации. 💰
               </p>
             </div>
             <div className='text-center'>
-              <div className='bg-green-100 dark:bg-green-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3'>
-                <RefreshCw className='w-6 h-6 text-green-600 dark:text-green-400' />
+              <div className='bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3'>
+                <span className='text-xl'>🎰</span>
               </div>
               <h4 className='font-medium text-gray-900 dark:text-white mb-2'>
-                Всегда креативно
+                🎲 Бесконечный Джекпот
               </h4>
               <p className='text-sm text-gray-600 dark:text-gray-400'>
-                Получайте уникальные, юмористические оправдания каждый раз.
-                Креативные ответы никогда не закончатся!
+                🃏 Каждый спин даёт уникальную комбинацию блефа! Джекпот
+                креативности никогда не заканчивается! 💸
               </p>
             </div>
             <div className='text-center'>
-              <div className='bg-purple-100 dark:bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3'>
-                <Copy className='w-6 h-6 text-purple-600 dark:text-purple-400' />
+              <div className='bg-gradient-to-r from-red-100 to-pink-100 dark:from-red-900 dark:to-pink-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3'>
+                <span className='text-xl'>💎</span>
               </div>
               <h4 className='font-medium text-gray-900 dark:text-white mb-2'>
-                Легко поделиться
+                💸 Мгновенная Выплата
               </h4>
               <p className='text-sm text-gray-600 dark:text-gray-400'>
-                Копирование в один клик позволяет легко делиться вашим идеальным
-                оправданием где угодно.
+                🎯 Один клик - и ваш блеф готов к игре! Делитесь королевскими
+                комбинациями везде! 🤑
               </p>
             </div>
           </div>
@@ -246,8 +251,8 @@ export default function Excusify() {
       <footer className='border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 mt-12'>
         <div className='max-w-4xl mx-auto px-4 py-6 text-center'>
           <p className='text-gray-600 dark:text-gray-400 text-sm'>
-            Сделано с ❤️ для тех, кому нужны креативные оправдания. Используйте
-            ответственно! 😉
+            🎰 Создано с ❤️ для мастеров блефа! Играйте ответственно! 🃏💰🎲
+            Удачи в игре! 🤑
           </p>
         </div>
       </footer>
