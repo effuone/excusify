@@ -89,6 +89,75 @@ export default function Excusify() {
         </div>
       </header>
 
+      {/* Landing Section */}
+      <section className='casino-table py-16 text-white'>
+        <div className='max-w-4xl mx-auto px-4 text-center'>
+          <div className='mb-8'>
+            <h2 className='text-4xl font-bold mb-6 text-shadow-lg'>
+              🎰 ВСТУПЛЕНИЕ ДЛЯ САЙТА EXCUSIFY 🎰
+            </h2>
+            <div className='w-24 h-1 bg-yellow-400 mx-auto mb-8'></div>
+          </div>
+
+          <div className='bg-black/20 backdrop-blur-sm rounded-xl p-8 mb-8 border border-white/10'>
+            <h3 className='text-2xl font-bold mb-6 text-yellow-300'>
+              🤖 EXCUSIFY — искусство отмазки. Прокачано нейросетью. Одобрено
+              совестью.
+            </h3>
+
+            <div className='text-lg leading-relaxed space-y-4'>
+              <p>Ты не ответил. Не пришёл. Исчез на день.</p>
+              <p>
+                И тут оно —{' '}
+                <span className='text-yellow-300 font-bold italic'>
+                  А почему ты молчишь?
+                </span>
+              </p>
+
+              <p className='mt-6 mb-6'>
+                Устал выдумывать причины?
+                <br />
+                Познакомься с Excusify — твоим личным генератором убедительных,
+                смешных и абсолютно гениальных отмазок.
+              </p>
+
+              <div className='grid md:grid-cols-3 gap-4 my-8 text-center'>
+                <div className='bg-white/10 rounded-lg p-4'>
+                  <p className='text-xl mb-2'>💬</p>
+                  <p>Не ответил жене?</p>
+                </div>
+                <div className='bg-white/10 rounded-lg p-4'>
+                  <p className='text-xl mb-2'>🏋️‍♂️</p>
+                  <p>Пропустил день ног?</p>
+                </div>
+                <div className='bg-white/10 rounded-lg p-4'>
+                  <p className='text-xl mb-2'>🎰</p>
+                  <p>Потерялся в казино, но нашёл дзен?</p>
+                </div>
+              </div>
+
+              <p>
+                Не важно, куда тебя занесла жизнь.
+                <br />
+                <span className='text-yellow-300 font-bold'>
+                  Важно — как ты это объяснишь.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div className='bg-gradient-to-r from-yellow-600 to-amber-600 rounded-xl p-6 border-2 border-yellow-400'>
+            <h3 className='text-2xl font-bold mb-4'>
+              🚀 Нажми кнопку. Получи отмазку. Спаси отношения, репутацию и свою
+              пятую точку.
+            </h3>
+            <p className='text-lg italic opacity-90'>
+              *(А может и выиграй время, чтобы придумать настоящую причину)*
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Main Content */}
       <main className='max-w-4xl mx-auto px-4 py-8'>
         <div className='grid md:grid-cols-2 gap-8'>
