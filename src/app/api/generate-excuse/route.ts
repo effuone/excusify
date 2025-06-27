@@ -10,10 +10,7 @@ export async function POST(request: NextRequest) {
     const { reason } = await request.json();
 
     if (!reason) {
-      return NextResponse.json(
-        { error: 'Reason is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Требуется причина' }, { status: 400 });
     }
 
     const completion = await openai.chat.completions.create({
@@ -21,11 +18,32 @@ export async function POST(request: NextRequest) {
       messages: [
         {
           role: 'system',
-          content: `You are an expert at creating creative, humorous, and believable excuses. Given a simple reason, transform it into a more elaborate, funny, and convincing excuse for why someone hasn't responded to a message. Make it creative but not too outrageous. Keep it under 200 words and make it entertaining.`,
+          content: `You are an excuse-generating AI assistant.  
+Your job is to generate a short, believable, or humorous excuse for why a person delayed replying to a message.  
+  
+Follow these rules strictly:  
+1. The excuse must fit the relationship with the recipient.  
+2. Match the tone exactly as specified: it can be casual, professional, humorous, absurd, sincere, dramatic, or flirty.  
+3. The excuse must be 1 or 2 sentences maximum, no more.  
+4. The excuse should be appropriate based on the reason, relationship, and optional context provided.  
+5. Do not include any greetings or closings (like "Hi" or "Best regards"). Only the excuse itself.  
+  
+---  
+Input parameters:  
+- Recipient: friend  
+- Reason for delay: forgot  
+- Tone: humorous  
+- Optional context: they texted me yesterday asking about weekend plans  
+  
+---  
+Output format:  
+- A single excuse as plain text, no extra commentary.  
+  
+Now generate the excuse.`,
         },
         {
           role: 'user',
-          content: `Transform this simple reason into a creative excuse: "${reason}"`,
+          content: `Преврати эту простую причину в креативное оправдание: "${reason}"`,
         },
       ],
       max_tokens: 300,
@@ -36,7 +54,7 @@ export async function POST(request: NextRequest) {
 
     if (!excuse) {
       return NextResponse.json(
-        { error: 'Failed to generate excuse' },
+        { error: 'Не удалось сгенерировать оправдание' },
         { status: 500 }
       );
     }
@@ -45,7 +63,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Error generating excuse:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Внутренняя ошибка сервера' },
       { status: 500 }
     );
   }

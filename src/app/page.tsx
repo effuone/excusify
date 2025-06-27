@@ -12,7 +12,7 @@ export default function Excusify() {
 
   const generateExcuse = async () => {
     if (!reason.trim()) {
-      setError('Please enter a reason first!');
+      setError('Пожалуйста, сначала введите причину!');
       return;
     }
 
@@ -31,12 +31,12 @@ export default function Excusify() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to generate excuse');
+        throw new Error(data.error || 'Не удалось сгенерировать оправдание');
       }
 
       setExcuse(data.excuse);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong!');
+      setError(err instanceof Error ? err.message : 'Что-то пошло не так!');
     } finally {
       setIsLoading(false);
     }
@@ -75,7 +75,7 @@ export default function Excusify() {
                 Excusify
               </h1>
               <p className='text-gray-600 dark:text-gray-400 text-sm'>
-                Transform your simple reasons into creative excuses
+                Превратите простые причины в креативные оправдания
               </p>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function Excusify() {
           {/* Input Section */}
           <div className='cf-card'>
             <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
-              What&apos;s your simple reason?
+              Какая у вас простая причина?
             </h2>
 
             <div className='space-y-4'>
@@ -96,7 +96,7 @@ export default function Excusify() {
                 <textarea
                   value={reason}
                   onChange={(e) => setReason(e.target.value)}
-                  placeholder='e.g., I was sleeping, I was busy, my phone died...'
+                  placeholder='например: я спал, я был занят, у меня разрядился телефон...'
                   className='cf-input w-full min-h-[120px] resize-none'
                   disabled={isLoading}
                 />
@@ -117,12 +117,14 @@ export default function Excusify() {
                 {isLoading ? (
                   <>
                     <RefreshCw className='w-4 h-4 animate-spin' />
-                    <span className='loading-dots'>Crafting your excuse</span>
+                    <span className='loading-dots'>
+                      Создаём ваше оправдание
+                    </span>
                   </>
                 ) : (
                   <>
                     <Sparkles className='w-4 h-4' />
-                    Generate Excuse
+                    Создать оправдание
                   </>
                 )}
               </button>
@@ -131,7 +133,7 @@ export default function Excusify() {
             {/* Sample Reasons */}
             <div className='mt-6'>
               <h3 className='text-sm font-medium text-gray-700 dark:text-gray-300 mb-3'>
-                Quick examples:
+                Быстрые примеры:
               </h3>
               <div className='flex flex-wrap gap-2'>
                 {sampleReasons.map((sample, index) => (
@@ -152,7 +154,7 @@ export default function Excusify() {
           <div className='cf-card'>
             <div className='flex items-center justify-between mb-4'>
               <h2 className='text-xl font-semibold text-gray-900 dark:text-white'>
-                Your Creative Excuse
+                Ваше креативное оправдание
               </h2>
               {excuse && (
                 <button
@@ -162,12 +164,12 @@ export default function Excusify() {
                   {copied ? (
                     <>
                       <Check className='w-4 h-4' />
-                      Copied!
+                      Скопировано!
                     </>
                   ) : (
                     <>
                       <Copy className='w-4 h-4' />
-                      Copy
+                      Копировать
                     </>
                   )}
                 </button>
@@ -183,9 +185,9 @@ export default function Excusify() {
                 <div className='flex items-center justify-center h-full text-gray-500 dark:text-gray-400'>
                   <div className='text-center'>
                     <Sparkles className='w-12 h-12 mx-auto mb-4 opacity-50' />
-                    <p>Your creative excuse will appear here!</p>
+                    <p>Ваше креативное оправдание появится здесь!</p>
                     <p className='text-sm mt-2'>
-                      Enter a reason and click generate to get started.
+                      Введите причину и нажмите кнопку создания для начала.
                     </p>
                   </div>
                 </div>
@@ -197,7 +199,7 @@ export default function Excusify() {
         {/* Fun Stats/Features */}
         <div className='mt-12 cf-card'>
           <h3 className='text-lg font-semibold text-gray-900 dark:text-white mb-4'>
-            Why Excusify?
+            Почему Excusify?
           </h3>
           <div className='grid md:grid-cols-3 gap-6'>
             <div className='text-center'>
@@ -205,11 +207,11 @@ export default function Excusify() {
                 <Sparkles className='w-6 h-6 text-blue-600 dark:text-blue-400' />
               </div>
               <h4 className='font-medium text-gray-900 dark:text-white mb-2'>
-                AI-Powered
+                Искусственный интеллект
               </h4>
               <p className='text-sm text-gray-600 dark:text-gray-400'>
-                Uses advanced AI to transform your simple reasons into
-                elaborate, entertaining excuses.
+                Использует продвинутый ИИ для превращения простых причин в
+                подробные, забавные оправдания.
               </p>
             </div>
             <div className='text-center'>
@@ -217,11 +219,11 @@ export default function Excusify() {
                 <RefreshCw className='w-6 h-6 text-green-600 dark:text-green-400' />
               </div>
               <h4 className='font-medium text-gray-900 dark:text-white mb-2'>
-                Always Creative
+                Всегда креативно
               </h4>
               <p className='text-sm text-gray-600 dark:text-gray-400'>
-                Get unique, humorous excuses every time. Never run out of
-                creative responses!
+                Получайте уникальные, юмористические оправдания каждый раз.
+                Креативные ответы никогда не закончатся!
               </p>
             </div>
             <div className='text-center'>
@@ -229,11 +231,11 @@ export default function Excusify() {
                 <Copy className='w-6 h-6 text-purple-600 dark:text-purple-400' />
               </div>
               <h4 className='font-medium text-gray-900 dark:text-white mb-2'>
-                Easy to Share
+                Легко поделиться
               </h4>
               <p className='text-sm text-gray-600 dark:text-gray-400'>
-                One-click copy makes it easy to share your perfect excuse
-                anywhere.
+                Копирование в один клик позволяет легко делиться вашим идеальным
+                оправданием где угодно.
               </p>
             </div>
           </div>
@@ -244,8 +246,8 @@ export default function Excusify() {
       <footer className='border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 mt-12'>
         <div className='max-w-4xl mx-auto px-4 py-6 text-center'>
           <p className='text-gray-600 dark:text-gray-400 text-sm'>
-            Made with ❤️ for those who need creative excuses. Use responsibly!
-            😉
+            Сделано с ❤️ для тех, кому нужны креативные оправдания. Используйте
+            ответственно! 😉
           </p>
         </div>
       </footer>
